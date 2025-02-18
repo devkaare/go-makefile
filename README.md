@@ -5,5 +5,5 @@
 ## Usage
 
 ```
-git clone git@github.com:devkaare/go-makefile.git && mv go-makefile/Makefile . && rm -rf go-makefile'
+git clone git@github.com:devkaare/go-makefile.git && mv go-makefile/Makefile . && rm -rf go-makefile
 ```
