@@ -29,7 +29,7 @@ build: tailwind-install templ-install
 	@go build -o main $(MAIN_FILE)
 
 # Run the application
-run:
+run: build
 	@go run $(MAIN_FILE)
 
 # Create DB container
@@ -42,14 +42,14 @@ docker-run:
 
 # Shutdown DB container
 docker-down:
-	@docker-compose down
+	@docker compose down
 
-# Run DB service
-db-run:
-	@docker compose up -d psql
+# Start DB service
+db-start:
+	@docker compose start psql
 
-# Shutdown DB service
-db-down:
+# Stop DB service
+db-stop:
 	@docker compose stop psql
 
 # Test the application
@@ -82,4 +82,4 @@ watch:
             fi; \
         fi
 
-.PHONY: all build run test clean watch docker-build docker-run docker-down db-run db-down itest templ-install tailwind-install
+.PHONY: all build run test clean watch docker-build docker-run docker-down db-start db-stop itest templ-install tailwind-install
