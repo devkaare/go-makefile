@@ -82,4 +82,6 @@ watch:
             fi; \
         fi
 
+# Test
+
 .PHONY: all build run test clean watch docker-build docker-run docker-down db-start db-stop itest templ-install tailwind-install
